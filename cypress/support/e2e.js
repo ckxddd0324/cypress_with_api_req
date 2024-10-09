@@ -15,9 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
-import { getTestContext } from "./utils";
-const globalTestData = {};
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+// import HttpClient from "api-request-lib/src/httpClient";
+// import dotenv from "dotenv";
 
-export { globalTestData };
+// dotenv.config();
+
+// // Create and export a singleton instance of apiClient
+// export const client = new HttpClient(Cypress.env("API_BASE_URL"));
+// console.log(process.env.API_BASE_URL);

@@ -10,25 +10,24 @@
 // what makes it such an awesome testing tool,
 // please read our getting started guide:
 // https://on.cypress.io/introduction-to-cypress
-import { getPosts, createPost } from "../../api/get_request";
-import { globalTestData } from "../../support/e2e";
 
+import { getPosts } from "../../api/get_request";
+const globalTestData = {};
 describe("example to-do app", () => {
   // const getMochaContext = () => cy.state("runnable").ctx;
 
   beforeEach(() => {
     cy.visit("https://example.cypress.io/todo");
-
     cy.wrap(getPosts()).then(({ data }) => {
-      console.log(globalTestData);
+      console.log(globalTestData, "ASDsa");
       globalTestData.todoTitle = data.title;
       console.log(globalTestData);
     });
 
-    cy.wrap(createPost(globalTestData.todoTitle)).then((res) => {
-      console.log("ds");
-      console.log(res);
-    });
+    // cy.wrap(createPost(globalTestData.todoTitle)).then((res) => {
+    //   console.log("ds");
+    //   console.log(res);
+    // });
   });
 
   it("displays two todo items by default", () => {
